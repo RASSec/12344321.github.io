@@ -114,19 +114,6 @@
 </footer>   	       
 	</article>
 	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2016/08/23/hitest/" title="hitest">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  hitest</span>
-</a>
-</div>
-
-
-</nav>
-
 	
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
@@ -143,21 +130,6 @@
   
 
   
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/etc/" title="etc...">etc...<sup>1</sup></a></li>
-		
-			<li><a href="/tags/標籤1/" title="標籤1">標籤1<sup>1</sup></a></li>
-		
-			<li><a href="/tags/標籤2/" title="標籤2">標籤2<sup>1</sup></a></li>
-		
-			<li><a href="/tags/標籤3/" title="標籤3">標籤3<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
 
   <div class="rsspart">
 	<a href="null" target="_blank" title="rss">RSS</a>
@@ -299,6 +271,27 @@ $(document).ready(function(){
 
 
 
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
 
