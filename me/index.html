@@ -1,10 +1,11 @@
 
- <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html >
 <head>
   <meta charset="UTF-8">
   
-    <title>柳吐槽社区</title>
+    <title>me | 柳吐槽社区</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="垂死的虫子">
@@ -24,9 +25,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      <div>
+      <body>
+        <header>
+          <div>
 		
 			<div id="imglogo">
 				<a href="/"><img src="/img/logo.svg" alt="柳吐槽社区" title="柳吐槽社区"/></a>
@@ -62,44 +63,58 @@
 			</nav>			
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/08/23/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
+      <a href="/me/index.html" title="me" itemprop="url">me</a>
+  </h1>
+  <p class="article-author">By
     
-    <time datetime="2016-08-23T00:20:21.000Z" itemprop="datePublished">2016-08-23</time>
-  </a>
-</section>
-
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
+      <a href="http://yoursite.com" title="垂死的虫子">垂死的虫子</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-08-23T02:55:36.000Z" itemprop="datePublished">2016-08-23</time>
+    Updated:<time datetime="2016-08-23T03:01:02.000Z" itemprop="dateModified">2016-08-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<blockquote>
+<blockquote>
+<p>躺在树上，来来回回.不知所措，俳徘徊徊.</p>
+<p>好久好久以前,大起大落,习惯猛然冲击.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><img src="http://chuantu.biz/t5/30/1471915089x2112046722.jpg" alt="image"></p>
+</blockquote>
+</blockquote>
   
+	</div>
+		<footer class="article-footer clearfix">
 
-  
 
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS</a>
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/me/index.html" data-title="me | 柳吐槽社区" data-tsina="null" class="share clearfix">
+  </div>
+
 </div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
+</footer>   	       
+	</article>
+	
+	
+</div>  
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -121,7 +136,7 @@
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+        <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -168,10 +183,39 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
 
 
-  </body>
- </html>
+
+      </body>
+     </html>
+     
